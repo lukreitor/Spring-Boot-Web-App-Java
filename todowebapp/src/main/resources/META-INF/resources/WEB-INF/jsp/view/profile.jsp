@@ -1,7 +1,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Spring Security Login Form</title>
+    <title>Welcome - RH WEBAPP</title>
     <!-- bootstrap 4 -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
@@ -36,66 +36,40 @@
                 </li>
             </ul>
 
+            <!--display username if user is logged in-->
+            <!-- display unsername in nav item, and logout button inside dropdown -->
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="/signup"><i class="fa fa-user-plus"></i> Sign Up</a> 
-
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/login"><i class="fa fa-sign-in"></i> Login</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        ${username}
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/profile">Profile</a>
+                        <a class="dropdown-item" href="/settings">Settings</a>
+                        <a class="dropdown-item" href="/logout">Logout</a>
+                    </div>
                 </li>
             </ul>
+
+            <!--ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout">Logout</a>
+                </li>
+            </ul-->
         </div>
     </nav>
 
-    <!-- welcome titule-->
-
-    
-    <!-- login form -->
-    <div class="container mt-5">
-        <div>
-            <pre>${errorMessage}</pre>
-        </div>
+    <!-- add main component of profile page -->
+    <div class="container">
         <div class="row">
-            <div class="col-md-6 offset-md-3">
-                <div class="card">
-                    <div class="card-header bg-primary">
-                        <h4 class="text-white">Sign In</h4>
-                    </div>
-                    <div class="card-body">
-                        <form method="POST">
-                            <div class="form-group">
-                                <label for="username">Username</label>
-                                <input type="text" name="username" class="form-control" id="username" placeholder="Enter username">
-                            </div>
-                            <div class="form-group">
-                                <label for="password">Password</label>
-                                <input type="password" name="password" class="form-control" id="password" placeholder="Password">
-                            </div>
-                            <!--remember and forgot password -->
-                            <div class="form-group">
-                                <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                    <label class="custom-control-label" for="customCheck1">Remember me</label>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <button type="submit" name="login" class="btn btn-primary btn-block btn-lg">Login</button>
-                            </div>
-                            <div class="form-group">
-                                <a href="#">Forgot Password?</a>
-                            </div>
-                            <p class="text-center">Not yet a member? <a href="/signup">Sign Up</a></p>
-                        </form>
-                    </div>
-                </div>
+            <div class="col-md-12">
+                <h1>Profile</h1>
             </div>
         </div>
     </div>
 
 
-    <!-- scritps -->
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

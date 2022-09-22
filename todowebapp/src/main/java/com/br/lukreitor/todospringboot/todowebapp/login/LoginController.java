@@ -6,9 +6,11 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 
 @Controller
+@SessionAttributes("username")
 public class LoginController {
     private AuthenticationService authenticationService = new AuthenticationService();
 
@@ -42,7 +44,19 @@ public class LoginController {
     //logout for get and post
     @RequestMapping(value="/logout", method=RequestMethod.GET)
     public String gotoLogoutPage() {
-        return "login";
+        return "index";
+    }
+
+    // profile 
+    @RequestMapping(value="/profile", method=RequestMethod.GET)
+    public String gotoProfilePage() {
+        return "profile";
+    }
+
+    //welcome 
+    @RequestMapping(value="/welcome", method=RequestMethod.GET)
+    public String gotoWelcomePage() {
+        return "welcome";
     }
 
     /*login -> com.br.lukreitor.todospringboot.todowebapp.login.LoginController -> login.jsp

@@ -1,0 +1,2 @@
+User name,          Password,Access key ID    Secret access key                     Console login link
+inspiron-15-dev-lm  AKIAV7WOD4P6H57BH5G4   q+qKbyF/HoFuUL/9xyt2Zppw7amivAn3x0MhknLr,https://411675386876.signin.aws.amazon.com/console
